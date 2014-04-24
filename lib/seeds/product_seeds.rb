@@ -48,33 +48,4 @@ class ProductSeeds
     end
   end
 
-  # def self.seed_products_csv
-  #   FileUtils.rm_rf("#{Rails.root}/public/uploads/products")
-  #   Product.destroy_all
-  #   file = File.join(Rails.root,'spec','files','csv','products.csv')
-  #   CSV.foreach(file, headers: true, col_sep: ",", skip_blanks: true) do |row|
-  #       # Checks if it's the primary entry for the product, and creates product as well as primary image
-  #       if row['is_primary'] == 1
-  #         brand = Brand.find_by_name(name: row[6])
-  #         Product.create!(
-  #           name: row[2],
-  #           price: row[8],
-  #           description: row[5],
-  #           brand_id: brand.id
-  #           )
-  #         open("image.jpg", "wb") do |image|
-  #           image << open("#{row[11]}").read
-  #           Product::Image.create(product_id: p.id, image: File.open(image), is_primary: true)
-  #         end
-  #       # Loops over secondary images for products that have already been created
-  #       else
-  #         p = Product.find_by_name(name: row[2])
-  #         open("image.jpg", "wb") do |image|
-  #           image << open("#{row[11]}").read
-  #           Product::Image.create(product_id: p.id, image: File.open(image), is_primary: false)
-  #         end
-  #       end
-  #   end
-  # end
-
 end

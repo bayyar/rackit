@@ -17,6 +17,8 @@
 
 # Ignore product image files
 /public/uploads/*
+/spec/files/csv/*
+image.jpg
 
-# Ignore carrierwave.rb with access keys
-/config/initializers/fog.rb
+# Ignore app_environment_variables.rb with access keys
+/config/initializers/app_environment_variables.rb
