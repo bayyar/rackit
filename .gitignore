@@ -17,3 +17,6 @@
 
 # Ignore product image files
 /public/uploads/*
+
+# Ignore carrierwave.rb with access keys
+/config/initializers/fog.rb
