@@ -1,0 +1,27 @@
+<div class="col-md-2">
+	<div class="row thumb primary_thumb_container" data-product-id="<%= @primary_image.product_id%>" data-image-id="<%= @primary_image.id %>">
+<<<<<<< HEAD
+			<%= image_tag(@primary_image.image.url(:thumb), class: "img-responsive", id: "primary_image_thumb") %>
+=======
+			<%= image_tag(@primary_image.image.url(:thumb), id: "primary_image_thumb") %>
+>>>>>>> 64b46c5265b36254f16753a6a6d41f24c1e8f0ce
+		</div>
+	<div class="secondary_thumb_super_container">
+		<% @product.product_images.where(is_primary: false).each do |thumb| %>
+			<div class="row thumb secondary_thumb_container" data-product-id="<%= thumb.product_id%>" data-image-id="<%= thumb.id %>">
+<<<<<<< HEAD
+				<%= image_tag(thumb.image.url(:thumb), class: "img-responsive") %>
+=======
+				<%= image_tag(thumb.image.url(:thumb)) %>
+>>>>>>> 64b46c5265b36254f16753a6a6d41f24c1e8f0ce
+			</div>
+		<% end %>
+	</div>
+</div>
+<div class="col-md-10 primary_image_container" data-primary-image-id="<%= @primary_image.id %>">
+<<<<<<< HEAD
+	<%= image_tag(@primary_image.image.url, class: "img-responsive", id: "primary_image") %>
+=======
+	<%= image_tag(@primary_image.image.url, id: "primary_image") %>
+>>>>>>> 64b46c5265b36254f16753a6a6d41f24c1e8f0ce
+</div>

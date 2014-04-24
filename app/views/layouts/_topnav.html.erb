@@ -1,0 +1,49 @@
+<div class="navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+		
+		<!-- Brand as header -->
+		<div class="navbar-header">
+			<% if current_user %>
+			<%= link_to "Shop Rackit", products_path, class: "navbar-brand" %>
+			<% else %>
+			<% end %>
+		</div>
+		
+		<!-- Collect all other nav links for toggling -->
+		<div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+      	<% if current_user %>
+      	<!-- Show the full menu with Rack, Find Friends, Logout -->
+          <li><%= link_to user_path(current_user.username) do %>
+						<span class="glyphicon glyphicon-heart"></span> My Rack
+						<% end %>
+    			</li>
+	      	<li class="dropdown-open">
+	          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+		    			<li><%= link_to users_path do %>
+		    					 <span class="glyphicon glyphicon-user"></span> Find Friends
+		    					 <% end %>
+		    			</li>
+	            <li><%= link_to edit_user_registration_path do %>
+	            	<span class="glyphicon glyphicon-cog"></span> Settings
+	            	<% end %>
+	            </li>
+	            <li class="divider"></li>
+	            <li><%= link_to destroy_user_session_path, :method => :delete do %>
+	            	<span class="glyphicon glyphicon-log-out"></span> Logout
+	            	<% end %>
+	            </li>
+	          </ul>
+	        </li>
+      	<% else %>
+      	<!-- Show just Login -->
+	      	<li><%= link_to new_user_session_path do %>
+	            	<span class="glyphicon glyphicon-log-in"></span> Login
+	            	<% end %></li>
+      	<% end %>
+      </ul>
+    </div>
+
+	</div>
+</div>

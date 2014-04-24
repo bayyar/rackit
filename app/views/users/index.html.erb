@@ -1,0 +1,21 @@
+<div class="friend-follow-div">
+  <h2>Find Other Rackit Users</h2>
+    <hr />
+      <div id="table">
+        <% @users.each do |user| %>
+          <div class="trow">
+            <span class="tcell">
+              <h4><%= link_to "@#{user.username}", user_path(user.username) %>
+              <br><small><%= user.created_at.strftime("Member since %m/%d/%Y") %>. <%= user.racked_products.count %><span class="glyphicon glyphicon-heart"></span></small></h4>
+            </span>
+            <span class="tcell follow-button-width">
+              <% if current_user.user_friendships.where(friend_id: user.id).empty? %>
+                <div class="follow btn btn-block btn-default" data-friend-id="<%= user.id %>">Follow</div>
+              <% else %>
+                <div class="unfollow btn btn-block btn-primary" data-friend-id="<%= user.id %>" data-friendship-id="<%= current_user.user_friendships.where(friend_id: user.id).first.id %>">Following</div>
+              <% end %>
+            </span>
+          </div>
+        <% end %>
+      </div>
+</div>

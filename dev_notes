@@ -1,0 +1,42 @@
+1. Create the layout and view for the index action
+
+2. What happens when a user views their user product prefences and they have 1000 actioned on items?
+	Think about pagination
+	Kaminari gem
+
+
+
+4. Create a seed catalog of over 1000 items for testing
+	Use your db seed
+
+
+5. Start to use ajax for all async requests!
+	Look at link_to remote
+	USE JQUERY INSTEAD OF LINK_TO REMOTE
+	http://www.youtube.com/watch?v=sqHN1eY86Fo
+
+	3. What happens when a user changes their mind on a production?
+	Change like to dislike or dislike to like
+	How to you unrack something?
+
+	Dislike/Unrack
+	When a user clicks unlike
+	It changes the data record
+	It removes the item from thier view
+	Should all be done with javascript
+	Dislike/Unrack should be buttons
+	Remove div based on data attribute data-product-id ** O SUCCESS
+
+	Update Seed Files
+	remove old seeding methods
+	create csv data
+		have 1 primary image
+		have mutitple child images
+
+Write the stories required for the social aspect of the application
+	write the social models
+		following aspect
+			2 user_id's (follower, followie)
+	share racked item
+		user_id, upp id
+		only share racked items

@@ -1,0 +1,19 @@
+<% @preferences.each do |p| %>
+	<div class="col-md-4 product_preference_<%=p.id%>">
+			<div class="thumbnail">
+					<div class ="upp_unrack" data-preference-id="<%= p.id %>">
+						<span class="racks"><%= Product.find(p.product_id).racks %></span>&nbsp;<span class="glyphicon glyphicon-heart"></span>
+					</div>
+				<%= image_tag(p.product.product_images.first.image.url(:pref_display), class: "img-responsive") %>
+				<div class="caption">
+					<%= link_to "View", product_path(p.product_id), class: "btn btn-default btn-sm" %>
+					<%= link_to "Buy Now", p.product.buy_url, class: "btn btn-primary btn-sm", target: "_blank" %>
+					<h3>
+						<%= p.product.name %>
+						(<%= number_to_currency(p.product.price / 100) %>)
+						<br><small><%= p.product.brand.name %></small>
+					</h3>
+				</div>
+			</div>
+	</div>
+<% end %>

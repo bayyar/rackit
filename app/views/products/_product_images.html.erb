@@ -1,0 +1,15 @@
+<div class="col-md-2">
+	<div class="row thumb primary_thumb_container" data-product-id="<%= @primary_image.product_id%>" data-image-id="<%= @primary_image.id %>">
+			<%= image_tag(@primary_image.image.url(:thumb), class: "img-responsive", id: "primary_image_thumb") %>
+		</div>
+	<div class="secondary_thumb_super_container">
+		<% @product.product_images.where(is_primary: false).each do |thumb| %>
+			<div class="row thumb secondary_thumb_container" data-product-id="<%= thumb.product_id%>" data-image-id="<%= thumb.id %>">
+				<%= image_tag(thumb.image.url(:thumb), class: "img-responsive") %>
+			</div>
+		<% end %>
+	</div>
+</div>
+<div class="col-md-10 primary_image_container" data-primary-image-id="<%= @primary_image.id %>">
+	<%= image_tag(@primary_image.image.url, class: "img-responsive", id: "primary_image") %>
+</div>
