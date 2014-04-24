@@ -99,7 +99,7 @@ updateProductView = (product, user) ->
 	$ ->
 		secondaryImages = product.secondary_images
 		$.each secondaryImages, ->
-			$('.secondary_thumb_super_container').append('<div class="row thumb secondary_thumb_container" data-product-id="' + @product_id + '" data-image-id="' + @id + '"><img alt="Thumb image" src="' +  @image.thumb.url + '"></div>')
+			$('.secondary_thumb_super_container').append('<div class="row thumb secondary_thumb_container" data-product-id="' + @product_id + '" data-image-id="' + @id + '"><img alt="Thumb image" class="img-responsive" src="' +  @image.thumb.url + '"></div>')
 			console.log "Thumb URL: " + @image.thumb.url
 			return
 		return
