@@ -17,7 +17,9 @@
 
 # Ignore product image files
 /public/uploads/*
-/spec/files/csv/*
+
+#Ignore spec CSV
+/spec/files/csv/products.csv
 image.jpg
 
 # Ignore app_environment_variables.rb with access keys

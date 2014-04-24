@@ -2,7 +2,7 @@
 	<div id="table">
 		<div class="brow">
 			<div class="tcell">
-				<h3><%= link_to "@#{@user.username}", user_path(@user.username) %></h3>
+				<h3>&nbsp;&nbsp;<%= link_to "@#{@user.username}", user_path(@user.username) %></h3>
 				<ul class="nav nav-pills">
 					<li><%= link_to "Following: #{@following.count}", following_path(@user.username) %></li>
 					<li><%= link_to "Followers: #{@followers.count}", followers_path(@user.username) %></li>
