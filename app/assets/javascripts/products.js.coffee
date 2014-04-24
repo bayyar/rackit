@@ -70,7 +70,7 @@ $(document).ready ->
 		console.log(product_id + "THIS IS THE PRODUCT ID")
 		console.log(image_id + "THIS IS THE IMAGE ID")
 		# Changes primary image to image that matches clicked thumb
-		$("#primary_image").attr('src', '/uploads/products/images/'+product_id+'/'+image_id+'/image.jpg')
+		$("#primary_image").attr('src', 'https://shoprackit.s3.amazonaws.com/uploads/products/p-'+product_id+'/i-'+image_id+'/image.jpg')
 		# Changes data attribute on container to the image id
 		$(".primary_image_container").attr('data-primary-image-id', image_id)
 		# Adds opacity to the active thumb
