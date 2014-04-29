@@ -4,8 +4,6 @@
 	(<%= number_to_currency(@product.price.to_f / 100) %>)</span><br>
 	<small><span id="product_brand"><%= @product.brand.name %></span></small><br>
 </h1>
-<div style="overflow:auto; height:250px;">
 	<h4>Description</h4>
 		<p><span id="product_description"><%= @product.description %></span></p>
 		<span id="product_buy_url"><%= link_to "Buy Now", @product.buy_url, class: "buy btn btn-default btn-lg", target: "_blank" %></span>
-</div>
