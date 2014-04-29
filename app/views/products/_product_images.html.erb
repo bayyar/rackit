@@ -1,4 +1,4 @@
-<div class="col-md-2 col-xs-3">
+<div class="col-md-2 col-xs-2">
 	<div class="thumb_container">
 		<div class="primary_thumb_super_container" align="right">
 			<div class="row thumb primary_thumb_container" data-product-id="<%= @primary_image.product_id%>" data-image-id="<%= @primary_image.id %>">
@@ -14,6 +14,6 @@
 		</div>
 	</div>
 </div>
-<div class="col-md-10 col-xs-9 primary_image_container" data-primary-image-id="<%= @primary_image.id %>">
+<div class="col-md-10 col-xs-10 primary_image_container" data-primary-image-id="<%= @primary_image.id %>">
 	<%= image_tag(@primary_image.image.url, class: "img-responsive", id: "primary_image") %>
 </div>

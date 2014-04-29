@@ -1,6 +1,6 @@
 <div class="col-md-12 col-xs-12">
   <div class="friend-follow-div">
-    <%= render "users/userleftnav" %>
+    <%= render "users/useraltnav" %>
     <% if @followers.empty? %>
       <p align="center">No followers :(</p>
     <% else %>
@@ -26,14 +26,9 @@
     <% end %>
   </div>
 </div>
-
-
-
-
-
-
 <script>
 $(document).ready(function() {
-  return $('.followers').addClass('active');
+  return $('.followers').addClass('btn-default active');
+  $('.following').addClass('btn-link')
 });
 </script>

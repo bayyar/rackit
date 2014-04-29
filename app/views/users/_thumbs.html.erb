@@ -1,5 +1,5 @@
 <% @preferences.each do |p| %>
-	<div class="col-md-4 product_preference_<%=p.id%>">
+	<div class="col-md-4 col-xs-12 product_preference_<%=p.id%>">
 			<div class="thumbnail">
 					<div class ="upp_unrack" data-preference-id="<%= p.id %>">
 						<span class="racks"><%= Product.find(p.product_id).racks.count %></span>&nbsp;<span class="glyphicon glyphicon-heart"></span>

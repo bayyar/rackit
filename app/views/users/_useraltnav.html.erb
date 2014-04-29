@@ -1,0 +1,7 @@
+<div class="user_cloud">
+	<h3><%= link_to "@#{@user.username}", user_path(@user.username) %></h3>
+	<div class="btn-group btn-group-md follow_links">
+		<%= link_to "Following: #{@following.count}", following_path(@user.username), class: "following btn btn-link" %>
+		<%= link_to "Followers: #{@followers.count}", followers_path(@user.username), class: "followers btn btn-link" %>
+	</div>
+</div>

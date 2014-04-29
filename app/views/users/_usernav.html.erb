@@ -1,20 +1,13 @@
-<div class="row">
-	<div id="table">
-		<div class="brow">
-			<div class="tcell">
-				<h3>&nbsp;&nbsp;<%= link_to "@#{@user.username}", user_path(@user.username) %></h3>
-				<ul class="nav nav-pills">
-					<li><%= link_to "Following: #{@following.count}", following_path(@user.username) %></li>
-					<li><%= link_to "Followers: #{@followers.count}", followers_path(@user.username) %></li>
-				</ul>
-			</div>
-			<div class="tcell follow-button-width">
-			<ul class="nav nav-pills nav-justified">
-	  		<li id="my_rack"><%= link_to user_path(@user.username) do %>Rack <span class="glyphicon glyphicon-heart"></span><% end %></li>
-	  		<li id="my_feed"><%= link_to feed_path(@user.username) do %>Feed <span class="glyphicon glyphicon-user"></span><span class="glyphicon glyphicon-user"></span><% end %></li>
-	  		<li id="global_feed"><%= link_to popular_path do %>Global <span class="glyphicon glyphicon-globe"></span><% end %></li>
-			</ul>
-			</div>
-		</div>
+<div class="user_cloud">
+	<h3><%= link_to "@#{@user.username}", user_path(@user.username) %></h3>
+	<div class="btn-group btn-group-md follow_links">
+		<%= link_to "Following: #{@following.count}", following_path(@user.username), class: "following btn btn-link" %>
+		<%= link_to "Followers: #{@followers.count}", followers_path(@user.username), class: "followers btn btn-link" %>
+	</div>
+
+	<div class="btn-group btn-group-md">
+		<%= link_to user_path(@user.username), class: "my_rack btn" do %>Rack <span class="glyphicon glyphicon-heart"></span><% end %>
+		<%= link_to feed_path(@user.username), class: "my_feed btn" do %>Feed <span class="glyphicon glyphicon-user"></span><span class="glyphicon glyphicon-user"></span><% end %>
+		<%= link_to popular_path, class: "popular btn" do %>Popular <span class="glyphicon glyphicon-fire"></span><% end %>
 	</div>
 </div>

@@ -92,6 +92,10 @@ p {
   font-size: 1.5em;
 }
 
+.product_images {
+  min-height: 270px;
+}
+
 // UPP Page
 
 .racks {
@@ -133,18 +137,27 @@ p {
 #table {
   display: table;
   width: 100%;
+  -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+        border-radius: 5px;
 }
 
 .brow {
   display: table-row;
+  -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+        border-radius: 5px;
 }
 
 .trow {
   display: table-row;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
 }
 
 .trow:hover {
-  background-color: #FAFAFA;
+  background-color: #F0F0F0;
 }
 
 .tcell {
@@ -152,14 +165,40 @@ p {
   text-align: left;
   vertical-align: middle;
   padding: 10px 15px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
 }
+
+// User Page
+
+.user_cloud {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 400px;
+  background-color: #F0F0F0;
+  padding: 5px 5px 10px 5px;
+  margin-bottom: 15px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+          box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+.follow_links {
+  margin-bottom: 5px;
+}
+
 
 // Friendships
 
 .friend-follow-div {
   margin-left: auto;
   margin-right: auto;
-  max-width: 700px;
+  max-width: 400px;
   -webkit-border-radius: 5px;
      -moz-border-radius: 5px;
           border-radius: 5px;
