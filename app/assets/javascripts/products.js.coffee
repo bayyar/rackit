@@ -61,14 +61,14 @@ $(document).ready ->
 	  return
 
 	thumbClickHandler = (target) ->
-		console.log(target)
+		# console.log(target)
 		# Removes opacity from all thumbnail images
 		$(".thumb").removeClass('thumb_opacity')
 		# Identifies product and image ID of the clicked thumb
 		product_id = target.data("product-id")
 		image_id = target.data("image-id")
-		console.log(product_id + "THIS IS THE PRODUCT ID")
-		console.log(image_id + "THIS IS THE IMAGE ID")
+		# console.log(product_id + "THIS IS THE PRODUCT ID")
+		# console.log(image_id + "THIS IS THE IMAGE ID")
 		# Changes primary image to image that matches clicked thumb
 		$("#primary_image").attr('src', 'https://shoprackit.s3.amazonaws.com/uploads/products/p-'+product_id+'/i-'+image_id+'/image.jpg')
 		# Changes data attribute on container to the image id
