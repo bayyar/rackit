@@ -7,13 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-
-<%= render "layouts/topnav" %>
-
 <div class="container-fluid">
-<%= yield %>
+	<%= render "layouts/topnav" %>
+	<%= yield %>
 </div>
-
 </body>
 </html>
