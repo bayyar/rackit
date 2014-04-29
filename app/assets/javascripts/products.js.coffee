@@ -92,8 +92,8 @@ updateProductView = (product, user) ->
 	$('.primary_image_container').attr('data-primary-image-id', product.primary_image.id)
 	# Changes image and data attributes for primary image thumb and its container
 	$('.thumb').removeClass('thumb_opacity')
-	$('#primary_image_thumb').attr('src', product.primary_image.image.thumb.url)
-	$('.primary_thumb_container').attr('data-product-id', product.id).attr('data-image-id', product.primary_image.id).addClass('thumb_opacity')
+	$('.primary_thumb_container').detach()
+	$('.primary_thumb_super_container').append('<div class="row thumb primary_thumb_container thumb_opacity" data-product-id="' + product.id + '" data-image-id="' + product.primary_image.id + '"><img alt="Thumb image" class="img-responsive" id="primary_image_thumb" src="' +  product.primary_image.image.thumb.url + '"></div>')
 	# Detaches thumbnails of non-primary images, and then loops through array of secondary images to produce new thumbnails (if they exist)
 	$('.secondary_thumb_container').detach()
 	$ ->
