@@ -1,25 +1,28 @@
 Rackit::Application.routes.draw do
   get "users/index"
-  get "users/show"
+  # get "users/show"
   devise_for :users
 
   resources :products, only: [:index, :show]
   
+  get 'popular', to: 'user_product_preferences#index', as: :popular
 
   resources :users, only: [:index]
   get ':username', to: 'users#show', as: :user
 
-  namespace :users do
-    resources :followers, only: [:show]
-    resources :followings, only: [:show]
-    resources :feeds, only: [:show]
-  end
+  # namespace :users do
+  #   resources :followers, only: [:show]
+  #   resources :followings, only: [:show]
+  #   resources :feeds, only: [:show]
+  # end
 
   get ':username/following', to: 'users/followings#index', as: :following
   get ':username/followers', to: 'users/followers#index', as: :followers
   get ':username/feed', to: 'users/feeds#index', as: :feed
 
   resources :user_product_preferences, only: [:create, :update, :destroy]
+
+
   resources :user_friendships, only: [:create, :update, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.

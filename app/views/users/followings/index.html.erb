@@ -1,29 +1,34 @@
 <div class="col-md-12">
-  <div class="col-md-4">
+  <div class="col-md-3">
     <%= render "users/userleftnav" %>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-9">
     <div class="friend-follow-div">
-      <center><h2>People You Follow</h2></center>
-          <div id="table">
-            <% @following.each do |follow| %>
-              <% x = follow.friend_id %>
-              <% f = User.find(x) %>
-              <div class="trow">
-                <span class="pcell">
-                  <h4><%= link_to "@#{f.username}", user_path(f.username) %> &nbsp;
-                  <small><%= f.racked_products.count %><span class="glyphicon glyphicon-heart"></span></small></h4>
-                </span>
-                <span class="pcell follow-button-width">
-                  <% if current_user.user_friendships.where(friend_id: x).empty? %>
-                    <div class="follow btn btn-block btn-default" data-friend-id="<%= x %>">Follow</div>
-                  <% else %>
-                    <div class="unfollow btn btn-block btn-primary" data-friend-id="<%= follow.user_id %>" data-friendship-id="<%= current_user.user_friendships.where(friend_id: x).first.id %>">Following</div>
-                  <% end %>
-                </span>
-              </div>
-            <% end %>
-          </div>
+      <% if @following.empty? %>
+        <p align="center">You're not following anyone.</p>
+        <p align="center"><%= link_to "Find people to follow.", users_path %></p>
+      <% else %>
+        <center><h2>People You Follow</h2></center>
+        <div id="table">
+          <% @following.each do |follow| %>
+            <% x = follow.friend_id %>
+            <% f = User.find(x) %>
+            <div class="trow">
+              <span class="tcell">
+                <h4><%= link_to "@#{f.username}", user_path(f.username) %> &nbsp;
+                <small><%= f.racked_products.count %><span class="glyphicon glyphicon-heart"></span></small></h4>
+              </span>
+              <span class="tcell follow-button-width">
+                <% if current_user.user_friendships.where(friend_id: x).empty? %>
+                  <div class="follow btn btn-block btn-default" data-friend-id="<%= x %>">Follow</div>
+                <% else %>
+                  <div class="unfollow btn btn-block btn-primary" data-friend-id="<%= follow.user_id %>" data-friendship-id="<%= current_user.user_friendships.where(friend_id: x).first.id %>">Following</div>
+                <% end %>
+              </span>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

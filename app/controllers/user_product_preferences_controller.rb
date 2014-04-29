@@ -22,6 +22,13 @@ class UserProductPreferencesController < ApplicationController
     respond_with @preference, status: :ok
   end
 
+  def index
+    @preferences = UserProductPreference.all
+    @user = current_user
+    @following = @user.following
+    @followers = User.followers(@user)
+  end
+
   private
   def pref_params
     params.require(:user_product_preference).permit(:product_id, :preference, :is_racked)

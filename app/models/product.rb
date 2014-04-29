@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
 	has_many :user_product_preferences, class_name: "UserProductPreference", foreign_key: "product_id", dependent: :destroy
 
 	def racks
-		user_product_preferences.where(is_racked: true).count
+		user_product_preferences.where(is_racked: true)
 	end
 
 	def self.random_product(user_id)

@@ -12,7 +12,7 @@
 			<ul class="nav nav-pills nav-justified">
 	  		<li id="my_rack"><%= link_to user_path(@user.username) do %>Rack <span class="glyphicon glyphicon-heart"></span><% end %></li>
 	  		<li id="my_feed"><%= link_to feed_path(@user.username) do %>Feed <span class="glyphicon glyphicon-user"></span><span class="glyphicon glyphicon-user"></span><% end %></li>
-	  		<li id="global_feed"><%= link_to "#" do %>Global <span class="glyphicon glyphicon-globe"></span><% end %></li>
+	  		<li id="global_feed"><%= link_to popular_path do %>Global <span class="glyphicon glyphicon-globe"></span><% end %></li>
 			</ul>
 			</div>
 		</div>

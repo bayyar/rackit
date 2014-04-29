@@ -3,7 +3,7 @@
 			<%= image_tag(@primary_image.image.thumb.url, class: "img-responsive", id: "primary_image_thumb") %>
 		</div>
 	<div class="secondary_thumb_super_container">
-		<% @product.product_images.where(is_primary: false).each do |thumb| %>
+		<% @secondary_images.each do |thumb| %>
 			<div class="row thumb secondary_thumb_container" data-product-id="<%= thumb.product_id%>" data-image-id="<%= thumb.id %>">
 				<%= image_tag(thumb.image.thumb.url, class: "img-responsive") %>
 			</div>

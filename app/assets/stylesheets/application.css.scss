@@ -55,9 +55,13 @@ p {
 
 // Rackit Product Page
 
-// .preference_buttons {
-//  padding-bottom: 10px;
-// }
+.dislike {
+  text-color: red;
+}
+
+.like {
+  text-color: green;
+}
 
 .thumb {
   margin-bottom: 5px;
@@ -144,13 +148,7 @@ p {
   display: table-cell;
   text-align: left;
   vertical-align: middle;
-}
-
-.pcell {
-  display: table-cell;
-  text-align: left;
-  vertical-align: middle;
-  padding: 5px 15px;
+  padding: 10px 15px;
 }
 
 // Friendships

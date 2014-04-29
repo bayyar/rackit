@@ -1,9 +1,9 @@
 $(document).ready ->
 		
-	# Checks which thumb matches primary image and adds opacity
+	# Checks which thumbnail matches primary image and adds opacity
 	image_id = $(".primary_image_container").data("primary-image-id")
 	$('div[data-image-id="' + image_id + '"]').addClass('thumb_opacity')
-	
+
 	# Makes the clicked thumb the primary image, and adds opacity to the active thumb
 	$(".thumb").click (event) ->
 		thumbClickHandler($(this))
@@ -103,8 +103,23 @@ updateProductView = (product, user) ->
 			console.log "Thumb URL: " + @image.thumb.url
 			return
 		return
-	# Binds the thumbnail jQuery action
 	$(".thumb").on "click", ->
-	  thumbClickHandler($(this))
-	  return
+		thumbClickHandler($(this))
+		return
+	thumbClickHandler = (target) ->
+		console.log(target)
+		# Removes opacity from all thumbnail images
+		$(".thumb").removeClass('thumb_opacity')
+		# Identifies product and image ID of the clicked thumb
+		product_id = target.data("product-id")
+		image_id = target.data("image-id")
+		console.log(product_id + "THIS IS THE PRODUCT ID")
+		console.log(image_id + "THIS IS THE IMAGE ID")
+		# Changes primary image to image that matches clicked thumb
+		$("#primary_image").attr('src', 'https://shoprackit.s3.amazonaws.com/uploads/products/p-'+product_id+'/i-'+image_id+'/image.jpg')
+		# Changes data attribute on container to the image id
+		$(".primary_image_container").attr('data-primary-image-id', image_id)
+		# Adds opacity to the active thumb
+		target.addClass('thumb_opacity')
+	return
 return
