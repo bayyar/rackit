@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :friends, through: :user_friendships
 
   # validates :name, presence: true
-  validates :username, presence: true, uniqueness: {case_sensitive: false}
+  validates :username, presence: true, uniqueness: {case_sensitive: false}, format: /\A[-a-z]+\Z/i
 
   def racked_products
   	product_preferences.where(is_racked: true)
