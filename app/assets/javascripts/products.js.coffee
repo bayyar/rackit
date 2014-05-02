@@ -83,6 +83,7 @@ updateProductView = (product, user) ->
 	$('#product_price').html('(' + product.price + ')')
 	$('#product_brand').html(product.brand.name)
 	$('#product_description').html(product.description)
+	$('#product_buy_url>a').attr('href', product.buy_url)
 	# Change preference button (Like, Dislike, Rackit) data attributes
 	$('.rackit').attr('data-product-id', product.id)
 	$('.dislike').attr('data-product-id', product.id)

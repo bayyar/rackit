@@ -6,6 +6,7 @@ json.product do |json|
 	json.primary_image @product.product_images.first
 	json.secondary_images @product.product_images.where(is_primary: false)
 	json.description @product.description
+	json.buy_url @product.buy_url
 end
 json.user do |json|
 	json.racked_products current_user.racked_products.count
